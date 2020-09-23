@@ -1,0 +1,69 @@
+<div class="flex flex-col">
+  <!--Country -->
+  <div class="px-2 py-2 m-2">
+    <p class="text-lg">For Country</p>
+
+    <span
+      *ngFor="let country of cousines"
+      (click)="selectFilter('cuisine', country)"
+      [ngClass]="{
+        'bg-teal-600 text-white': isSelected('cuisine', country),
+        'bg-gray-200 text-gray-700': !isSelected('cuisine', country)
+      }"
+      class="inline-block rounded-full px-3 py-1 my-1 text-sm font-semibold mr-2 hover:bg-gray-400 cursor-pointer"
+    >
+      {{ country }}
+    </span>
+  </div>
+
+  <!-- Diet-->
+  <div class="px-2 py-2 m-2">
+    <p class="text-lg">For Diet</p>
+
+    <span
+      *ngFor="let diet of diets"
+      (click)="selectFilter('diet', diet)"
+      [ngClass]="{
+        'bg-teal-600 text-white': isSelected('diet', diet),
+        'bg-gray-200 text-gray-700': !isSelected('diet', diet)
+      }"
+      class="inline-block rounded-full px-3 py-1 my-1 text-sm font-semibold mr-2 hover:bg-gray-400 cursor-pointer"
+    >
+      {{ diet }}
+    </span>
+  </div>
+
+  <!-- Intolerances-->
+  <div class="px-2 py-2 m-2">
+    <p class="text-lg">Avoid Intolerances</p>
+
+    <span
+      *ngFor="let intolerance of intolerances"
+      (click)="selectFilter('intolerances', intolerance)"
+      [ngClass]="{
+        'bg-teal-600 text-white': isSelected('intolerances', intolerance),
+        'bg-gray-200 text-gray-700': !isSelected('intolerances', intolerance)
+      }"
+      class="inline-block rounded-full px-3 py-1 my-1 text-sm font-semibold mr-2 hover:bg-gray-400 cursor-pointer"
+    >
+      {{ intolerance }}
+    </span>
+  </div>
+
+  <!-- Intolerances-->
+  <div class="px-2 py-2 m-2">
+    <p class="text-lg">For types</p>
+
+    <span
+      *ngFor="let type of types"
+      (click)="selectFilter('type', type)"
+      [ngClass]="{
+        'bg-teal-600 text-white': isSelected('type', type),
+        'bg-gray-200 text-gray-700': !isSelected('type', type)
+      }"
+      class="inline-block rounded-full px-3 py-1 my-1 text-sm font-semibold mr-2 hover:bg-gray-400 cursor-pointer"
+    >
+      {{ type }}
+    </span>
+  </div>
+</div>

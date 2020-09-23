@@ -1,0 +1,30 @@
+<div class="flex mb-4">
+  <div class="w-1/4 h-12">
+    <app-advanced-search
+      #advancedSearch
+      (onSelect)="selectFilter($event)"
+    ></app-advanced-search>
+    <button
+      (click)="advancedSearch.clean()"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded ml-2"
+    >
+      Clean Filters
+    </button>
+  </div>
+  <!-- <div class="w-3/4 h-12 flex content-start flex-wrap"> -->
+
+  <!-- main -->
+  <main class="w-3/4 overflow-y-auto">
+    <div class="px-10 grid grid-cols-4 gap-4">
+      <app-recipe
+        [recipe]="recipe"
+        *ngFor="let recipe of recipes"
+        [routerLink]="['/recipe', recipe.id]"
+      ></app-recipe>
+      <app-info-message
+        class="w-full p-2 self-center"
+        *ngIf="recipes.length === 0"
+      ></app-info-message>
+    </div>
+  </main>
+</div>
