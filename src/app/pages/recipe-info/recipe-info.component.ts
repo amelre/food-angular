@@ -37,7 +37,6 @@ export class RecipeInfoComponent implements OnInit, OnDestroy {
         .getRecipe(this.id)
         .subscribe((res) => {
           this.recipe = res;
-          console.log(this.recipe);
         });
     });
   }
@@ -47,12 +46,19 @@ export class RecipeInfoComponent implements OnInit, OnDestroy {
   }
 
   toPrepare() {
-    console.log(this.id);
     this._prepare.addRecipe({
       id: this.recipe.id,
       title: this.recipe.title,
       readyInMinutes: this.recipe.readyInMinutes,
       image: this.recipe.image,
     });
+  }
+
+  toDelete() {
+    this._prepare.removeRecipe(this.recipe.id);
+  }
+
+  isOnList(): boolean {
+    return this._prepare.recipeExists({ id: this.recipe.id });
   }
 }

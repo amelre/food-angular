@@ -21,16 +21,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       .subscribe((res: any) => {
         this.recipes = res.recipes;
       });
-    // this._recipes.search(
-    //   {
-    //     cuisine: 'mexican',
-    //     number: 5,
-    //     diet: 'vegan',
-    //     intolerances: 'diary',
-    //     query: 'pasta'
-    //   }
-    // ).subscribe(res =>  console.log(res));
-    // this._recipes.getRecipe(723984).subscribe(res => console.log(res));
   }
 
   selectFilter($e: any): void {

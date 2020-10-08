@@ -1,6 +1,6 @@
 export interface Recipe {
   id: number;
-  title: String;
+  title?: String;
   readyInMinutes?: number;
   image?: String;
 }

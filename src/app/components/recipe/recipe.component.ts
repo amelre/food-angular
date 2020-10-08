@@ -9,13 +9,8 @@ import { RecipesService } from "src/app/core/services";
 })
 export class RecipeComponent implements OnInit {
   @Input() recipe: Recipe;
-  baseUri = "https://spoonacular.com/recipeImages/";
 
   constructor(public _recipeService: RecipesService) {}
 
   ngOnInit() {}
-
-  getImageUrl(name: String): String {
-    return `${this.baseUri}${name}?apiKey=59381bb809014d7283ad857ba71112bd`;
-  }
 }

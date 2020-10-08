@@ -7,18 +7,38 @@ import { Recipe } from "src/app/models/recipe.model";
 export class PrepareService {
   constructor() {}
 
-  private recipesToPrepare: Recipe[] = [];
+  private _recipesToPrepare: Recipe[] = [];
+  public currentRecipe = null;
+  timer = null;
+
+  get recipesToPrepare(): Recipe[] {
+    return this._recipesToPrepare;
+  }
+
+  set recipesToPrepare(r) {
+    this._recipesToPrepare = r;
+  }
 
   addRecipe(recipe: Recipe) {
+    if (this.recipeExists(recipe)) {
+      return;
+    }
+    clearTimeout(this.timer);
     this.recipesToPrepare.push(recipe);
-    console.log(this.recipesToPrepare);
+    this.currentRecipe = recipe;
+    this.timer = setTimeout(() => {
+      this.currentRecipe = null;
+    }, 3000);
   }
 
   removeRecipe(id: number) {
-    console.log(id);
     this.recipesToPrepare = this.recipesToPrepare.filter(
-      (r: Recipe) => r.id === id
+      (r: Recipe) => r.id !== id
     );
-    console.log(this.recipesToPrepare);
+  }
+
+  recipeExists(recipe: Recipe): boolean {
+    const index = this.recipesToPrepare.findIndex((r) => r.id === recipe.id);
+    return index !== -1;
   }
 }

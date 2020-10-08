@@ -11,7 +11,25 @@
         {{ recipe.title }}
       </h1>
       <button
+        *ngIf="isOnList()"
         class="text-white px-4 w-auto h-8 bg-red-600 rounded-full hover:bg-red-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none"
+        (click)="toDelete()"
+      >
+        <svg
+          viewBox="0 0 20 20"
+          enable-background="new 0 0 20 20"
+          class="w-4 h-4 inline-block mr-1"
+        >
+          <path
+            fill="#FFFFFF"
+            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+          />
+        </svg>
+        <span>Delete Recipe to List</span>
+      </button>
+      <button
+        *ngIf="!isOnList()"
+        class="text-white px-4 w-auto h-8 bg-indigo-600 rounded-full hover:bg-indigo-700 active:shadow-lg mouse shadow transition ease-in duration-200 focus:outline-none"
         (click)="toPrepare()"
       >
         <svg

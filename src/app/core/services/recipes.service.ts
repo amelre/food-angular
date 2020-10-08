@@ -1,14 +1,11 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { SETTINGS } from "../../constants/settings";
 
 @Injectable({
   providedIn: "root",
 })
 export class RecipesService {
-  baseImage = "https://spoonacular.com/recipeImages/";
-  baseUrl = "https://api.spoonacular.com/";
-  apiKey = "59381bb809014d7283ad857ba71112bd";
-
   constructor(public http: HttpClient) {}
 
   randomRecipes(num: number = 10) {
@@ -16,7 +13,7 @@ export class RecipesService {
   }
 
   srcImage(name: string): string {
-    return `${this.baseImage}${name}?apiKey=${this.apiKey}`;
+    return `${SETTINGS.BASE_IMAGE}${name}?apiKey=${SETTINGS.API_KEY}`;
   }
 
   search(params?: any) {
@@ -28,11 +25,11 @@ export class RecipesService {
   }
 
   private getRequest(request: string, params?: any) {
-    const url = this.baseUrl + request;
+    const url = SETTINGS.BASE_URL + request;
 
     params = {
       ...params,
-      apiKey: this.apiKey,
+      apiKey: SETTINGS.API_KEY,
     };
 
     const urlParameters = Object.entries(params)

@@ -6,7 +6,6 @@ const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "recipe/:id", component: RecipeInfoComponent },
   { path: "**", pathMatch: "full", redirectTo: "home" },
-  // { path: '**',  component: NopagefoundComponent }
 ];
 
 export const APP_ROUTES = RouterModule.forRoot(appRoutes);

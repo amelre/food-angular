@@ -6,7 +6,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
+  showModal = false;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  toggleModal() {
+    this.showModal = !this.showModal;
+  }
 }
