@@ -1,0 +1,25 @@
+<nav class="flex items-center justify-between flex-wrap bg-teal-500 p-6">
+  <div
+    class="flex items-center flex-shrink-0 text-white mr-6 cursor-pointer"
+    [routerLink]="['/home']"
+  >
+    <span class="font-semibold text-xl tracking-tight">F O O D</span>
+  </div>
+  <div>
+    <button
+      class="nline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0 inline-flex items-center"
+      (click)="toggleModal()"
+    >
+      <svg
+        class="fill-current w-4 h-4 mr-2"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"
+        />
+      </svg>
+      <span>My Recipes</span>
+    </button>
+  </div>
+</nav>

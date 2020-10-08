@@ -1,0 +1,92 @@
+<div *ngIf="show" class="fixed z-10 inset-0 overflow-y-auto">
+  <div
+    class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0"
+  >
+    <div class="fixed inset-0 transition-opacity">
+      <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+    </div>
+
+    <span class="hidden sm:inline-block sm:align-middle sm:h-screen"></span
+    >&#8203;
+
+    <div
+      class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-headline"
+    >
+      <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+        <!-- Row 1 -->
+        <div class="flex justify-between">
+          <div
+            class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-teal-100 sm:mx-0 sm:h-10 sm:w-10"
+          >
+            <svg
+              class="h-6 w-6 text-teal-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              />
+            </svg>
+          </div>
+
+          <div class="cursor-pointer" (click)="closeModal()">
+            <svg
+              class="h-6 w-6 text-teal-600"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- Titulo  -->
+        <div class="flex justify-center">
+          <h1 class="text-2xl text-gray-800">My Recipes to prepare</h1>
+        </div>
+        <!-- Lista -->
+        <div *ngIf="recipes">
+          <div
+            *ngFor="let recipe of recipes"
+            class="grid grid-cols-6 place-items-stretch my-3"
+          >
+            <div class="col-span-2">
+              <img
+                alt="..."
+                [src]="recipe.image"
+                class="h-24 w-24 rounded mx-auto"
+              />
+            </div>
+            <div class="col-span-3 grid m-auto">
+              <h2>{{ recipe.title }}</h2>
+            </div>
+            <div class="col-span-1 m-auto text-xs text-gray-600">
+              Ready in {{ recipe.readyInMinutes }} min
+            </div>
+          </div>
+        </div>
+        <div *ngIf="recipes.length < 1">
+          <div
+            class="bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4"
+            role="alert"
+          >
+            <p class="font-bold">Ups...</p>
+            <p>You don't have any recipes yet. 😨</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
