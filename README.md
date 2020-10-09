@@ -1,27 +1,32 @@
-# TailwindcssAngular
+# Angular FOOD
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0.
+This is an Angular App using the [Spoonacular API](https://spoonacular.com/).
+
+![](src/assets/image.gif)
+
+## Resources
+
+- [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0
+- [Tailwindcss](https://tailwindcss.com/) as CSS Framework.
+- An Account in [Spoonacular](https://spoonacular.com/food-api/docs).
+
+This application was created in order to reinforce the knowledge of Angular and TailwindCSS.
+
+### Topics that you can find within the app:
+
+- Routing
+- Communication between components (Input, Output)
+- Rest Services
+- Providers
+- Stateful and Stateless Components
+- Angular animations
+- Design with Tailwindcss
+- CSS Grid and Flexbox
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+After create your account in [Spoonacular](https://spoonacular.com/food-api/docs) remember to change the **API_KEY** that is in _src/app/constants/settings.ts_ for yours.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+> The free version of Spoonacular only allows 150 requests/day.
