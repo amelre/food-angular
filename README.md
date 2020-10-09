@@ -1,4 +1,4 @@
-# Angular FOOD
+# Angular FOOD 🍇🍳🥗🍕🍗
 
 This is an Angular App using the [Spoonacular API](https://spoonacular.com/).
 
@@ -6,9 +6,9 @@ This is an Angular App using the [Spoonacular API](https://spoonacular.com/).
 
 ## Resources
 
-- [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0
-- [Tailwindcss](https://tailwindcss.com/) as CSS Framework.
-- An Account in [Spoonacular](https://spoonacular.com/food-api/docs).
+- [Angular CLI](https://github.com/angular/angular-cli) version 8.3.0 ❤️
+- [Tailwindcss](https://tailwindcss.com/) as CSS Framework. 🌨
+- An Account in [Spoonacular](https://spoonacular.com/food-api/docs). 🥄
 
 This application was created in order to reinforce the knowledge of Angular and TailwindCSS.
 
